@@ -6,6 +6,8 @@ export const CardsWrapper = styled.div`
   position: relative;
   width: 100%;
   margin-top: 50px;
+  max-width: 100vw;
+  overflow: hidden;
   &::before,
   &::after {
     background: linear-gradient(
@@ -61,9 +63,6 @@ export const Card = styled.div`
   );
 
   transition: all 0.3s ease-in-out;
-  &:hover {
-    transform: translateY(-20px);
-  }
 `;
 
 export const CardTitle = styled.h3`
