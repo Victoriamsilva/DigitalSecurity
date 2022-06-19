@@ -6,6 +6,8 @@ const GlobalStyles = createGlobalStyle`
   html {
     --main-green: #082335;
     --main-background: #031a29;
+    --black: #010f18;
+    --black-lighter: #232f36;
     --white: #fff;
     --green-lighter: #46ebad;
     --blue-light: #30eff2;

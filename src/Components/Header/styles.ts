@@ -11,10 +11,15 @@ export const Header = styled.header`
   z-index: 999;
 `;
 
-export const Nav = styled.nav`
+interface NavProps {
+  isOpen: boolean;
+}
+
+export const Nav = styled.nav<NavProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 999;
   ul {
     display: flex;
     list-style: none;
@@ -30,11 +35,18 @@ export const Nav = styled.nav`
       align-items: center;
       justify-content: center;
       transition: all 0.3s ease-in-out;
+      text-align: center;
       &:hover {
         color: var(--green-lighter);
       }
       &.dropdown {
         position: relative;
+        .dropdown-title {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
         span {
           display: flex;
           align-items: center;
@@ -85,6 +97,38 @@ export const Nav = styled.nav`
       }
     }
   }
+  @media screen and (max-width: 600px) {
+    position: fixed;
+    width: 240px;
+    height: 100vh;
+    background-color: var(--black);
+    top: 0;
+    right: 0;
+    transform: ${(props) =>
+      props.isOpen ? "translateX(0)" : "translateX(240px)"};
+    align-items: flex-start;
+    ul {
+      flex-direction: column;
+      margin-top: 50px;
+      width: 100%;
+      li {
+        padding: 5px 0;
+        margin: 5px 0;
+        &.dropdown {
+          flex-direction: column;
+          .dropdown-title {
+            padding: 0 10px;
+          }
+          .dropdown-content {
+            position: relative;
+            margin-top: 15px;
+            background: var(--black-lighter);
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
 `;
 
 export const Logo = styled.div`
@@ -98,5 +142,64 @@ export const Logo = styled.div`
     height: 50px;
     width: auto;
     margin-right: 5px;
+  }
+`;
+
+const Icon = styled.div`
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  transition: all 0.3s ease-in;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  @media screen and (max-width: 600px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
+export const OpenMenuIcon = styled(Icon)`
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background-color: var(--green-lighter);
+    opacity: 0.4;
+    transition: all 0.3s ease-in;
+  }
+  span {
+    display: block;
+    height: 1.5px;
+    width: 20px;
+    background-color: var(--white);
+    margin: 2px 0;
+    position: relative;
+    z-index: 2;
+  }
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+`;
+
+export const CloseMenuIcon = styled(Icon)`
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  img {
+    width: 20px;
+    height: auto;
   }
 `;

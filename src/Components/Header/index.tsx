@@ -5,6 +5,8 @@ import Arrow from '../../Assets/images/arrow.svg';
 import World from '../../Assets/images/world.svg';
 import Brazil from '../../Assets/images/brasil.svg';
 import USA from '../../Assets/images/usa.svg';
+import Close from '../../Assets/images/close.svg';
+
 
 import Logo from '../../Assets/images/logo.svg';
 import * as S from "./styles";
@@ -15,6 +17,7 @@ export default function Header() {
   const [openedDropdown, setOpenedDropdown] = useState<string>('');
   const dropdownRef: any = useRef();
   const changeLanguageRef: any = useRef();
+  const [isOpen, setIsOpen] = useState(false);
 
   const navigate = useNavigate();
 
@@ -51,6 +54,21 @@ export default function Header() {
     }
   };
 
+  const changePage = (path: string) => {
+    navigate(path);
+    setIsOpen(false);
+  }
+
+  const changeLanguage = (language: string) => {
+    i18next.changeLanguage(language);
+    setIsOpen(false);
+  }
+
+  const openQuiz = () => {
+    window.open(`${t("quiz")}`, '_blank');
+    setIsOpen(false);
+  }
+
 
   return (
     <S.Header>
@@ -58,60 +76,72 @@ export default function Header() {
         <img src={Logo} alt="" />
         {t("Digital Security")}
       </S.Logo>
-      <S.Nav>
+      <S.OpenMenuIcon onClick={() => setIsOpen(true)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </S.OpenMenuIcon>
+      <S.Nav isOpen={isOpen}>
+        <S.CloseMenuIcon onClick={() => setIsOpen(false)}>
+          <img src={Close} alt="Close" />
+        </S.CloseMenuIcon>
         <ul>
           <li
             ref={dropdownRef}
             className="dropdown"
             onClick={() => openDropdown('cyberSecurityDropdown')}
           >
-            {t("Cyber Security")}
-            <img
-              className={`arrow ${openedDropdown === 'cyberSecurityDropdown' ? 'up' : ''
-                }`}
-              src={Arrow}
-              alt=""
-            />
+            <div className="dropdown-title">
+              {t("Cyber Security")}
+              <img
+                className={`arrow ${openedDropdown === 'cyberSecurityDropdown' ? 'up' : ''
+                  }`}
+                src={Arrow}
+                alt=""
+              />
+            </div>
             <div
               className={`dropdown-content ${openedDropdown === 'cyberSecurityDropdown' ? 'show' : ''
                 }`}
             >
-              <span className="dropdown-item" onClick={() => navigate('/protect-yourself')}>
+              <span className="dropdown-item" onClick={() => changePage('/protect-yourself')}>
                 {t("How Protect Yourself")}
               </span>
-              <span className="dropdown-item" onClick={() => navigate('/protect-your-business')}>
+              <span className="dropdown-item" onClick={() => changePage('/protect-your-business')}>
                 {t("How Protect Your Business")}
               </span>
-              <span className="dropdown-item" onClick={() => navigate('/fun-facts')}>
+              <span className="dropdown-item" onClick={() => changePage('/fun-facts')}>
                 {t("Fun facts about digital security")}
               </span>
-              <span className="dropdown-item" onClick={() => window.open(`${t("quiz")}`, '_blank')}>
+              <span className="dropdown-item" onClick={openQuiz}>
                 {t("quiz title")}
               </span>
             </div>
           </li>
-          <li onClick={() => navigate('/cyber-attacks')}>{t("Cyber Attacks")}</li>
-          <li onClick={() => navigate('/about-us')}>{t("about us")}</li>
+          <li onClick={() => changePage('/cyber-attacks')}>{t("Cyber Attacks")}</li>
+          <li onClick={() => changePage('/about-us')}>{t("about us")}</li>
           <li
             ref={changeLanguageRef}
             className="dropdown"
             onClick={() => openDropdown('languageDropdown')}
           >
-            <img src={World} alt="Change language" />
-            <img
-              className={`arrow ${openedDropdown === 'languageDropdown' ? 'up' : ''
-                }`}
-              src={Arrow}
-              alt=""
-            />
+            <div className="dropdown-title">
+              <img src={World} alt="Change language" />
+              <img
+                className={`arrow ${openedDropdown === 'languageDropdown' ? 'up' : ''
+                  }`}
+                src={Arrow}
+                alt=""
+              />
+            </div>
             <div
               className={`dropdown-content ${openedDropdown === 'languageDropdown' ? 'show' : ''
                 }`}
             >
-              <span className="dropdown-item" onClick={() => i18next.changeLanguage('en-US')}>
+              <span className="dropdown-item" onClick={() => changeLanguage('en-US')}>
                 <img src={USA} alt="Change language to English" />
               </span>
-              <span className="dropdown-item" onClick={() => i18next.changeLanguage('pt-BR')}>
+              <span className="dropdown-item" onClick={() => changeLanguage('pt-BR')}>
                 <img src={Brazil} alt="Change language to Portuguese" />
               </span>
             </div>
