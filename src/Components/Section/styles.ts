@@ -24,4 +24,17 @@ export const Section = styled.section`
       transition: width 0.3s ease-in-out;
     }
   }
+  @media screen and (max-width: 600px) {
+    padding: 20px 20px;
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      &::before {
+        display: none;
+      }
+    }
+    p {
+      text-align: center;
+    }
+  }
 `;

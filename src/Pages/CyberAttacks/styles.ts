@@ -16,6 +16,9 @@ export const Wrapper = styled.div<{ background: any }>`
     background-size: cover;
     opacity: 0.6;
   }
+  @media screen and (max-width: 600px) {
+    padding: 20px;
+  }
 `;
 
 export const Container = styled.div`
@@ -28,7 +31,6 @@ export const Blocks = styled.div`
   padding: 50px;
   align-items: center;
   border-top: solid 1px var(--blue-light);
-
   h3 {
     width: 300px;
     min-width: 300px;
@@ -36,5 +38,17 @@ export const Blocks = styled.div`
   }
   p {
     color: var(--light-gray);
+  }
+  @media screen and (max-width: 600px) {
+    padding: 20px;
+    flex-direction: column;
+    h3 {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    p {
+      text-align: center;
+    }
   }
 `;

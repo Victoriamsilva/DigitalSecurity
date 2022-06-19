@@ -27,15 +27,12 @@ export const BannerContent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  color: $white;
-  width: 40%;
-  max-width: 500px;
-  padding-left: 100px;
+  padding-left: 80px;
   position: relative;
   z-index: 2;
 
   p {
-    margin: 35px 0;
+    margin: 25px 0;
   }
 
   @media screen and (max-width: 600px) {
@@ -43,9 +40,9 @@ export const BannerContent = styled.div`
     padding: 0;
   }
 
-  @media screen and (max-width: 1000px) and (min-width: 600px) {
+  @media screen and (min-width: 600px) {
     width: 70%;
-    padding-left: 50px;
+    padding-left: 20px;
   }
 `;
 
@@ -77,10 +74,13 @@ export const BinaryImg = styled.img`
 export const BannerImg = styled.img`
   z-index: 1;
   height: 80vh;
+  position: absolute;
+  right: 0;
   @media screen and (max-width: 600px) {
-    position: absolute;
-    right: 0;
     width: 100vw;
     opacity: 0.2;
+  }
+  @media screen and (min-width: 600px) {
+    max-width: 50vw;
   }
 `;

@@ -5,7 +5,7 @@ export const Button = styled.button`
   background-color: transparent;
   padding: 7px 60px;
   color: var(--blue-light);
-  font-size: 2rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;

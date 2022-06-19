@@ -3,7 +3,7 @@ import * as S from "./styles";
 
 interface CardProps {
   title: string,
-  description: string,
+  description?: string,
   image: any
 }
 

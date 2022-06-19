@@ -26,13 +26,13 @@ export default function Home() {
         </ColumnLayout>
 
         <ColumnLayout>
+          <Image image={Image1} />
           <p>
             {t('Digital security 1')}
           </p>
-          <Image image={Image1} />
         </ColumnLayout>
 
-        <ColumnLayout>
+        <ColumnLayout reverse={true}>
           <Image image={Image2} />
           <p>
             {t('Digital security 2')}
@@ -40,10 +40,10 @@ export default function Home() {
         </ColumnLayout>
 
         <ColumnLayout>
+          <Image image={Image3} />
           <p>
             {t('Digital security 3')}
           </p>
-          <Image image={Image3} />
         </ColumnLayout>
       </Section>
 
@@ -55,17 +55,14 @@ export default function Home() {
             title={t("Digital Security")}
             description={t("differences description 1")}
             image={Image4} />
-
           <Card
             title={t('Information Security')}
             description={t("differences description 2")}
             image={Image5} />
-
           <Card
             title={t('Cyber Security')}
             description={t("differences description 3")}
             image={Image6} />
-
         </S.CardsWrapper>
 
       </Section>

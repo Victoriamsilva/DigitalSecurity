@@ -4,7 +4,8 @@ export const Card = styled.div`
   border-radius: 10px;
   width: 100%;
   max-width: 300px;
-  margin: 0 20px;
+  min-width: 250px;
+  margin: 0 20px 20px 20px;
   /* box-shadow: 2px 2px 15px 0px var(--blue-light); */
   padding: 20px;
   text-align: center;

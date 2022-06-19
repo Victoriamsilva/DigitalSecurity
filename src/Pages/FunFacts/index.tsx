@@ -14,7 +14,6 @@ export default function Funfacts() {
           {t("Funfacts")}
         </G.Title>
         <S.Blocks>
-
           <h3><div>1</div>{t("Funfact 1")}</h3>
           <p>{t("Funfact 1.1")}</p>
         </S.Blocks>

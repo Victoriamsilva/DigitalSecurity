@@ -13,17 +13,26 @@ import i18next from 'i18next';
 export default function Header() {
   const { t } = useTranslation();
   const [openedDropdown, setOpenedDropdown] = useState<string>('');
-  const ref: any = useRef();
+  const dropdownRef: any = useRef();
+  const changeLanguageRef: any = useRef();
+
   const navigate = useNavigate();
 
   useEffect(() => {
     const checkIfClickedOutside = (event: MouseEvent) => {
-      if (
-        openedDropdown &&
-        ref.current &&
-        !ref.current.contains(event.target)
-      ) {
-        setOpenedDropdown('');
+      if (openedDropdown) {
+        if (openedDropdown === 'cyberSecurityDropdown'
+          && dropdownRef.current
+          && !dropdownRef.current.contains(event.target)
+        ) {
+          setOpenedDropdown('');
+        }
+        if (openedDropdown === 'languageDropdown'
+          && changeLanguageRef.current
+          && !changeLanguageRef.current.contains(event.target)
+        ) {
+          setOpenedDropdown('');
+        }
       }
     };
 
@@ -52,7 +61,7 @@ export default function Header() {
       <S.Nav>
         <ul>
           <li
-            ref={ref}
+            ref={dropdownRef}
             className="dropdown"
             onClick={() => openDropdown('cyberSecurityDropdown')}
           >
@@ -84,7 +93,7 @@ export default function Header() {
           <li onClick={() => navigate('/cyber-attacks')}>{t("Cyber Attacks")}</li>
           <li onClick={() => navigate('/about-us')}>{t("about us")}</li>
           <li
-            ref={ref}
+            ref={changeLanguageRef}
             className="dropdown"
             onClick={() => openDropdown('languageDropdown')}
           >
