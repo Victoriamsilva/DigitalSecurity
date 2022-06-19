@@ -81,7 +81,7 @@ export default function Header() {
               </span>
             </div>
           </li>
-          <li onClick={() => navigate('/cyber-attacks')}>{t("Cyber Attacks")}</li>
+          <li><a href={t("Cyber Attacks")}></a></li>
           <li onClick={() => navigate('/about-us')}>{t("about us")}</li>
           <li
             ref={ref}
