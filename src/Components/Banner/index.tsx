@@ -24,5 +24,6 @@ export default function Banner() {
       <S.BinaryImg src={BinarySVG} />
       <S.PatternImg src={PatternSVG} />
     </S.Banner>
+
   );
 }
