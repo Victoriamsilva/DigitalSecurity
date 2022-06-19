@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const CardsWrapper = styled.div`
-  height: 420px;
+  height: 425px;
   margin: auto;
-  overflow: hidden;
   position: relative;
   width: 100%;
   margin-top: 50px;
@@ -15,7 +14,7 @@ export const CardsWrapper = styled.div`
       rgba(255, 255, 255, 0) 100%
     );
     content: "";
-    height: 400px;
+    height: 420px;
     position: absolute;
     width: 100px;
     z-index: 4;
@@ -23,13 +22,13 @@ export const CardsWrapper = styled.div`
 
   &::after {
     right: 0;
-    top: 0;
+    top: -25px;
     transform: rotateZ(180deg);
   }
 
   &::before {
     left: 0;
-    top: 0;
+    top: -25px;
   }
 `;
 
