@@ -52,10 +52,6 @@ export default function Home() {
 
         <S.CardsWrapper>
           <Card
-            title={t("Digital Security")}
-            description={t("differences description 1")}
-            image={Image4} />
-          <Card
             title={t('Information Security')}
             description={t("differences description 2")}
             image={Image5} />
@@ -63,6 +59,10 @@ export default function Home() {
             title={t('Cyber Security')}
             description={t("differences description 3")}
             image={Image6} />
+          <Card
+            title={t("Digital Security")}
+            description={t("differences description 1")}
+            image={Image4} />
         </S.CardsWrapper>
 
       </Section>
