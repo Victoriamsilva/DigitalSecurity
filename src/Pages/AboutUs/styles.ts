@@ -21,13 +21,11 @@ export const CardsWrapper = styled.div`
     width: 100px;
     z-index: 4;
   }
-
   &::after {
     right: 0;
     top: -25px;
     transform: rotateZ(180deg);
   }
-
   &::before {
     left: 0;
     top: -25px;
@@ -38,6 +36,7 @@ export const CardsSlider = styled.div`
   animation: scroll 20s linear infinite;
   display: flex;
   width: calc(300px * 10);
+
   @keyframes scroll {
     0% {
       transform: translateX(0);
@@ -61,7 +60,6 @@ export const Card = styled.div`
     rgba(2, 0, 36, 1) 0%,
     rgba(102, 14, 139, 1) 100%
   );
-
   transition: all 0.3s ease-in-out;
 `;
 
@@ -85,12 +83,3 @@ export const CardDescription = styled.p`
   font-size: 1rem;
   color: var(--purple-light);
 `;
-
-// @keyframes scroll {
-//   0% {
-//     transform: translateX(0);
-//   }
-//   100% {
-//     transform: translateX(calc(-300px * 5));
-//   }
-// }

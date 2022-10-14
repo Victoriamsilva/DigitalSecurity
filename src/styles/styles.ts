@@ -12,6 +12,7 @@ export const Title = styled.h1`
     rgba(22, 59, 84, 1) 0%,
     rgba(8, 35, 53, 1) 65%
   );
+
   @media screen and (max-width: 600px) {
     width: 100%;
     text-align: center;
@@ -32,6 +33,7 @@ export const DivTitle = styled.div`
   p {
     color: var(--light-gray);
   }
+
   @media screen and (max-width: 600px) {
     padding: 20px 20px;
     margin: 20px;

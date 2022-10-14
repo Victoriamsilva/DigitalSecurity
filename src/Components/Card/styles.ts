@@ -6,7 +6,6 @@ export const Card = styled.div`
   max-width: 300px;
   min-width: 250px;
   margin: 0 20px 20px 20px;
-  /* box-shadow: 2px 2px 15px 0px var(--blue-light); */
   padding: 20px;
   text-align: center;
   background: linear-gradient(

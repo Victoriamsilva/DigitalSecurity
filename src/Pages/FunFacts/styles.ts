@@ -16,6 +16,7 @@ export const Wrapper = styled.div<{ background: any }>`
     background-size: cover;
     opacity: 0.6;
   }
+
   @media screen and (max-width: 600px) {
     padding: 30px 20px;
   }
@@ -33,9 +34,6 @@ export const Blocks = styled.div`
   align-items: center;
   justify-content: flex-start;
   border-top: solid 1px var(--blue-light);
-  @media screen and (max-width: 600px) {
-    padding: 30px 0px;
-  }
   h3 {
     font-size: 25px;
     margin-bottom: 28px;
@@ -70,9 +68,14 @@ export const Blocks = styled.div`
     font-size: 20px;
     font-weight: bold;
     margin-right: 25px;
+
     @media screen and (max-width: 600px) {
       margin-right: 0;
       margin-bottom: 20px;
     }
+  }
+
+  @media screen and (max-width: 600px) {
+    padding: 30px 0px;
   }
 `;

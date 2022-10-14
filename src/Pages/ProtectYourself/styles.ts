@@ -16,6 +16,7 @@ export const Wrapper = styled.div<{ background: any }>`
     background-size: cover;
     opacity: 0.6;
   }
+
   @media screen and (max-width: 600px) {
     padding: 20px;
   }
@@ -27,16 +28,10 @@ export const TipsWrapper = styled.div`
   margin-top: 100px;
   position: relative;
   z-index: 2;
-  @media screen and (max-width: 600px) {
-    flex-direction: column;
-    margin-top: 0;
-  }
-
   .tip {
     flex: 0 0 50%;
     margin-bottom: 50px;
     position: relative;
-
     p {
       color: var(--light-gray);
       margin-top: 20px;
@@ -48,7 +43,6 @@ export const TipsWrapper = styled.div`
       width: 2px;
       background-color: var(--green-lighter);
     }
-
     &::before {
       position: absolute;
       content: "";
@@ -83,6 +77,7 @@ export const TipsWrapper = styled.div`
         left: 81px;
       }
     }
+
     @media screen and (max-width: 600px) {
       p,
       h2 {
@@ -100,6 +95,11 @@ export const TipsWrapper = styled.div`
         padding: 0;
       }
     }
+  }
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    margin-top: 0;
   }
 `;
 
@@ -119,10 +119,12 @@ export const TipIcon = styled.div`
   margin-bottom: 20px;
   z-index: 2;
   position: relative;
+
   img {
     width: 50%;
     height: auto;
   }
+
   @media screen and (max-width: 600px) {
     margin: 0 auto 20px auto;
   }

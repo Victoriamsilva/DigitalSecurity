@@ -17,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
     --light-gray: rgb(233, 228, 228);
     scroll-behavior: smooth;
   }
+
   * {
     margin: 0;
     padding: 0;
@@ -36,6 +37,7 @@ const GlobalStyles = createGlobalStyle`
     color: var(--white);
     background-color: var(--main-green);
     overflow-x: hidden;
+    
     p {
       font-family: 'Noto Sans', sans-serif;
       line-height: 30px;

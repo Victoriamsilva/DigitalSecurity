@@ -17,7 +17,6 @@ export default function AppRoutes() {
         <Route path="/protect-your-business" element={<ProtectYourBusiness />}></Route>
         <Route path="/fun-facts" element={<FunFacts />}></Route>
         <Route path="/cyber-attacks" element={<CyberAttacks />}></Route>
-        <Route path="/about-us" element={<AboutUs />}></Route>
       </Routes>
     </Router>
   );

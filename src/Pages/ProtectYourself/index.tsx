@@ -5,12 +5,13 @@ import web from "../../Assets/images/web.svg";
 import twofactor from "../../Assets/images/two-factor.svg";
 import attacktools from "../../Assets/images/attacktools.svg";
 import Pattern from "../../Assets/images/patternpad.svg";
+import { useTranslation } from "react-i18next";
 import * as S from "./styles";
 import * as G from "../../styles/styles";
-import { useTranslation } from "react-i18next";
-//pronta
+
 export default function ProtectYourself() {
   const { t } = useTranslation();
+
   return (
     <>
       <G.Title>{t("How Protect Yourself")}</G.Title>
@@ -32,7 +33,6 @@ export default function ProtectYourself() {
           <div className="tip">
             <S.TipIcon>
               <img src={password} />
-
             </S.TipIcon>
             <h2>{t("Strong passwords and correct storage")}</h2>
             <p>
@@ -42,7 +42,6 @@ export default function ProtectYourself() {
           <div className="tip">
             <S.TipIcon>
               <img src={email} />
-
             </S.TipIcon>
             <h2>{t("Ignore suspicious emails")}</h2>
             <p>
@@ -52,18 +51,15 @@ export default function ProtectYourself() {
           <div className="tip">
             <S.TipIcon>
               <img src={attacktools} />
-
             </S.TipIcon>
             <h2> {t("Use counter attack tools")}</h2>
             <p>
               {t("Description attack tools")}
             </p>
-
           </div>
           <div className="tip">
             <S.TipIcon>
               <img src={web} />
-
             </S.TipIcon>
             <h2>{t("Beware of malicious websites")}</h2>
             <p>{t("Description Beware")}</p>
@@ -75,10 +71,8 @@ export default function ProtectYourself() {
             <h2>{t("Use two-factor authentication")}</h2>
             <p>{t("Description two-factor")}</p>
           </div>
-
         </S.TipsWrapper>
       </S.Wrapper>
     </>
-
   )
 }

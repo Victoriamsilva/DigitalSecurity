@@ -1,15 +1,16 @@
 import Button from "../Button";
-import * as S from "./styles";
 import BannerSVG from '../../Assets/images/banner.svg';
 import BinarySVG from '../../Assets/images/binary.svg';
 import PatternSVG from '../../Assets/images/pattern.svg';
 import { useTranslation } from "react-i18next";
+import * as S from "./styles";
 
 export default function Banner() {
   const { t } = useTranslation();
   function scrollTo() {
     document.getElementsByTagName("section")[0]?.scrollIntoView()
   }
+
   return (
     <S.Banner>
       <S.BannerContent>

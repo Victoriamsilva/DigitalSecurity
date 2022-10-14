@@ -6,30 +6,21 @@ import World from '../../Assets/images/world.svg';
 import Brazil from '../../Assets/images/brasil.svg';
 import USA from '../../Assets/images/usa.svg';
 import Close from '../../Assets/images/close.svg';
-
-
 import Logo from '../../Assets/images/logo.svg';
-import * as S from "./styles";
 import i18next from 'i18next';
+import * as S from "./styles";
 
 export default function Header() {
-  const { t } = useTranslation();
-  const [openedDropdown, setOpenedDropdown] = useState<string>('');
+  const [openedDropdown, setOpenedDropdown] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
   const dropdownRef: any = useRef();
   const changeLanguageRef: any = useRef();
-  const [isOpen, setIsOpen] = useState(false);
-
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   useEffect(() => {
     const checkIfClickedOutside = (event: MouseEvent) => {
       if (openedDropdown) {
-        if (openedDropdown === 'cyberSecurityDropdown'
-          && dropdownRef.current
-          && !dropdownRef.current.contains(event.target)
-        ) {
-          setOpenedDropdown('');
-        }
         if (openedDropdown === 'languageDropdown'
           && changeLanguageRef.current
           && !changeLanguageRef.current.contains(event.target)
@@ -38,9 +29,7 @@ export default function Header() {
         }
       }
     };
-
     document.addEventListener('mousedown', checkIfClickedOutside);
-
     return () => {
       document.removeEventListener('mousedown', checkIfClickedOutside);
     };
@@ -119,7 +108,6 @@ export default function Header() {
             </div>
           </li>
           <li onClick={() => changePage('/cyber-attacks')}>{t("Cyber Attacks")}</li>
-          <li onClick={() => changePage('/about-us')}>{t("about us")}</li>
           <li
             ref={changeLanguageRef}
             className="dropdown"
@@ -148,7 +136,6 @@ export default function Header() {
           </li>
         </ul>
       </S.Nav>
-
     </S.Header>
   );
 }

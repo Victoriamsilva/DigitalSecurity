@@ -3,10 +3,9 @@ import Pattern from "../../Assets/images/patternpad.svg";
 import * as G from "../../styles/styles";
 import * as S from "./styles";
 
-
-
 export default function CyberAttacks() {
   const { t } = useTranslation();
+
   return (
     <S.Wrapper background={Pattern}>
       <S.Container>
@@ -62,17 +61,6 @@ export default function CyberAttacks() {
           <h3>{t("DoS attack")}</h3>
           <p>{t("Description dos attack")}</p>
         </S.Blocks>
-
-
-
-
-
-
-
-
-
-
-
       </S.Container>
     </S.Wrapper>
   )

@@ -73,9 +73,7 @@ export const Nav = styled.nav<NavProps>`
           display: flex;
           align-items: center;
           justify-content: center;
-          align-items: center;
           flex-direction: column;
-          /* min-width: 200px; */
           width: fit-content;
           background-color: var(--main-background-opacity);
           transition: all 0.3s ease-in-out;

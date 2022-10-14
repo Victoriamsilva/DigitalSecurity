@@ -16,6 +16,7 @@ export const Wrapper = styled.div<{ background: any }>`
     background-size: cover;
     opacity: 0.6;
   }
+
   @media screen and (max-width: 600px) {
     padding: 20px;
   }
@@ -39,6 +40,7 @@ export const Blocks = styled.div`
   p {
     color: var(--light-gray);
   }
+
   @media screen and (max-width: 600px) {
     padding: 20px;
     flex-direction: column;

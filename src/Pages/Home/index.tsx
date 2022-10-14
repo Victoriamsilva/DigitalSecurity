@@ -8,10 +8,10 @@ import Image5 from "../../Assets/images/information-security-icon.svg";
 import Image6 from "../../Assets/images/cyber-security-icon.svg";
 import Section from "../../Components/Section";
 import Video from "../../Components/Video";
-import * as S from "./style";
 import ColumnLayout from "../../Components/ColumnLayout";
 import Card from "../../Components/Card";
 import { useTranslation } from "react-i18next";
+import * as S from "./style";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -24,21 +24,18 @@ export default function Home() {
           <h2>{t('What is Digital Security?')}</h2>
           <Video />
         </ColumnLayout>
-
         <ColumnLayout>
           <Image image={Image1} />
           <p>
             {t('Digital security 1')}
           </p>
         </ColumnLayout>
-
         <ColumnLayout reverse={true}>
           <Image image={Image2} />
           <p>
             {t('Digital security 2')}
           </p>
         </ColumnLayout>
-
         <ColumnLayout>
           <Image image={Image3} />
           <p>
@@ -46,10 +43,8 @@ export default function Home() {
           </p>
         </ColumnLayout>
       </Section>
-
       <Section color="LIGHT">
         <h2>{t("Differences")}</h2>
-
         <S.CardsWrapper>
           <Card
             title={t('Information Security')}
@@ -64,7 +59,6 @@ export default function Home() {
             description={t("differences description 1")}
             image={Image4} />
         </S.CardsWrapper>
-
       </Section>
     </>
   );

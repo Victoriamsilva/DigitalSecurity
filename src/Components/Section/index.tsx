@@ -16,6 +16,7 @@ export default function Section({ children, color }: SectionProps) {
     }
     return "--main-green";
   }
+
   return (
     <S.Section color={getVarColor()}>{children}</S.Section>
   );
