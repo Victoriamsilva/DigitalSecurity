@@ -5,6 +5,21 @@
   usuário. Além disso, foi implementada a internacionalização, então é possível a visualização em inglês e em português.
   É possível acessar a página web clicando nesse link: https://digital-security.vercel.app/
 
+### 🔧 Instalação
+
+```bash
+$ yarn install
+```
+
+## Running the app
+
+```bash
+# development
+$ yarn dev
+```
+
+Acesse em [url](http://localhost:5173/)
+
 ## 🛠️ Construído com
   ```
   ReactTS - O framework web usado
@@ -15,3 +30,6 @@
   ```
   i18next - Biblioteca utilizada para a internacionalização
   ```
+
+---
+⌨️ por [Victoria Marques](https://gist.github.com/Victoriamsilva) 😊
